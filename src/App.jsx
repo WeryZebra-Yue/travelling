@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import "./assets/css/animate.css";
@@ -13,11 +13,21 @@ import "./assets/css/style.css";
 import "./assets/css/responsive.css";
 
 import imgsrc from "./assets/images/packages/p1.jpg";
-import { packages } from "./component/Example";
+// import { packages } from "./component/Example";
 import Package from "./component/Package";
 import Payment from "./component/Payment";
+import { getPackages } from "./service/user.service.Jsx";
 
 function App() {
+  const [packages, setPackages] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      const _package = await getPackages();
+      setPackages(_package);
+    }
+    fetchData();
+  }, []);
+
   return (
     <>
       {" "}

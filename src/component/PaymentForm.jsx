@@ -8,6 +8,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { useEffect, useState } from "react";
 import PaymentIcon from "@mui/icons-material/Payment";
 import Payment from "./Payment";
+import { createBooking } from "../service/user.service.Jsx";
 export default function PaymentForm(props) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -75,8 +76,20 @@ export default function PaymentForm(props) {
                   name: "Acme Corp",
                   description: "Test Transaction",
                   image: "https://example.com/your_logo",
-                  handler: function (response) {
-                    alert(response.razorpay_payment_id);
+                  handler: async function (response) {
+                    const booking = {
+                      trip: props.title,
+                      price: props.price,
+                      payment: "Razorpay",
+                      status: "Booked",
+                      time: new Date().toLocaleString(),
+                      name: props.name,
+                      email: props.email,
+                      phone: props.phone,
+                      paymentId: response.razorpay_payment_id,
+                    };
+                    await createBooking(booking);
+                    window.location.reload();
                   },
 
                   prefill: {
@@ -94,6 +107,10 @@ export default function PaymentForm(props) {
                 };
                 const rzp = new window.Razorpay(options);
                 rzp.open();
+                rzp.on("payment.approved", function (response) {
+                  console.log(response);
+                  props.close();
+                });
               }}
             >
               <img

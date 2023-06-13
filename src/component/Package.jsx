@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FormDialog from "./Form";
-
+import image from "../assets/images/packages/p1.jpg";
 function Package(props) {
   const [dialog, setDialog] = useState(false);
   return (
@@ -10,14 +10,23 @@ function Package(props) {
         flexDirection: "column",
         // justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: "#f5f5f5",
+        color: "#f9f7f3",
         marginBottom: "1em",
-        padding: "1em",
+        // padding: "1em",
         borderRadius: "1em",
       }}
     >
       <div>
-        <img src={props.imgsrc} alt="package-place" width={350} height={250} />
+        <img
+          src={props.imgsrc ? props.imgSrc : image}
+          alt="package-place"
+          width={350}
+          height={250}
+          style={{
+            borderTopLeftRadius: "1em",
+            borderTopRightRadius: "1em",
+          }}
+        />
         <div
           style={{
             display: "flex",
@@ -25,20 +34,27 @@ function Package(props) {
             justifyContent: "space-between",
             alignItems: "center",
             width: "100%",
+            padding: "0em 0em 0em 0em",
           }}
         >
           <div
             style={{
               display: "flex",
-              flexDirection: "row",
+              // flexDirection: "column",
               justifyContent: "space-between",
               width: "100%",
-              paddingTop: "1em",
+              backgroundColor: "#4361ee",
+
+              padding: "1em 1em 1em 1em",
             }}
           >
             <span
               style={{
-                fontSize: "1.2em",
+                fontSize: "1.4em",
+                fontFamily: "Poppins",
+                // letterSpacing: "0.04em",
+                fontWeight: 500,
+                // fontWeight: 500,
               }}
               className=""
             >
@@ -47,26 +63,37 @@ function Package(props) {
             <span
               style={{
                 fontSize: "1.2em",
+                fontFamily: "Poppins",
               }}
             >
-              {props.price.inr} ₹
+              {props.price.inr} ₹ | {props.price.usd} $
             </span>
           </div>
-          <div>
-            <button
-              style={{
-                backgroundColor: "#1976d2",
-                border: "none",
-                color: "white",
-              }}
-              onClick={() => {
-                setDialog(true);
-              }}
-              className="about-view packages-btn"
-            >
-              book now
-            </button>
-          </div>
+
+          <button
+            style={{
+              // backgroundColor: "#1976d2",
+              border: "none",
+              color: "white",
+              width: "100%",
+              padding: "0.9em",
+              borderRadius: "0 0 0.5em  0.5em",
+              cursor: "pointer",
+              fontSize: "1.25em",
+              // buying button
+              fontFamily: "Poppins",
+              letterSpacing: "0.05em",
+              fontWeight: 500,
+              backgroundColor: "#4361ee",
+              marginTop: "1em",
+            }}
+            onClick={() => {
+              setDialog(true);
+            }}
+            // className="about-view packages-btn"
+          >
+            Book Now
+          </button>
 
           {/* <div className="packages-para">
             <p>

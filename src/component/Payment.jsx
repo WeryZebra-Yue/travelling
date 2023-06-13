@@ -41,10 +41,21 @@ function Payment(props) {
             });
           }}
           onApprove={(data, actions) => {
-            return actions?.order.capture().then(function (details) {
-              alert(
-                "Transaction completed by " + details.payer.name.given_name
-              );
+            return actions?.order.capture().then(async function (details) {
+              const booking = {
+                trip: props.title,
+                price: props.price,
+                payment: "Paypal",
+                status: "Booked",
+                time: new Date().toLocaleString(),
+                name: props.name,
+                email: props.email,
+                phone: props.phone,
+                paymentId: details.id,
+              };
+              await createBooking(booking);
+
+              window.location.reload();
             });
           }}
         />

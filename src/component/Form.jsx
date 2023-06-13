@@ -60,11 +60,7 @@ export default function FormDialog(props) {
             <TextField
               autoFocus
               // make lable false
-              InputLabelProps={{
-                style: {
-                  fontSize: "0.5em",
-                },
-              }}
+
               margin="dense"
               InputLabelProps={{
                 style: {
