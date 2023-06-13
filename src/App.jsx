@@ -16,7 +16,7 @@ import imgsrc from "./assets/images/packages/p1.jpg";
 // import { packages } from "./component/Example";
 import Package from "./component/Package";
 import Payment from "./component/Payment";
-import { getPackages } from "./service/user.service.Jsx";
+import { getPackages } from "./service/user.service.jsx";
 
 function App() {
   const [packages, setPackages] = useState([]);

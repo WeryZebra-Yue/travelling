@@ -8,7 +8,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { useEffect, useState } from "react";
 import PaymentIcon from "@mui/icons-material/Payment";
 import Payment from "./Payment";
-import { createBooking } from "../service/user.service.Jsx";
+import { createBooking } from "../service/user.service";
 export default function PaymentForm(props) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
