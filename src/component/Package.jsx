@@ -43,56 +43,81 @@ function Package(props) {
               // flexDirection: "column",
               justifyContent: "space-between",
               width: "100%",
-              backgroundColor: "#4361ee",
+              backgroundSize: "cover",
 
-              padding: "1em 1em 1em 1em",
+              background: `url(${props.imgsrc})`,
             }}
           >
-            <span
+            <div
               style={{
-                fontSize: "1.4em",
-                fontFamily: "Poppins",
-                // letterSpacing: "0.04em",
-                fontWeight: 500,
-                // fontWeight: 500,
-              }}
-              className=""
-            >
-              {props.title}{" "}
-            </span>
-            <span
-              style={{
-                fontSize: "1.2em",
-                fontFamily: "Poppins",
+                display: "flex",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                width: "100%",
+                justifyContent: "space-between",
+                alignItems: "center",
+                height: "100%",
+                padding: "1em 1em 1em 1em",
               }}
             >
-              {props.price.inr} ₹ | {props.price.usd} $
-            </span>
+              <span
+                style={{
+                  fontSize: "1.4em",
+                  fontFamily: "Poppins",
+                  // letterSpacing: "0.04em",
+                  fontWeight: 500,
+                  // fontWeight: 500,
+                }}
+                className=""
+              >
+                {props.title}{" "}
+              </span>
+              <span
+                style={{
+                  fontSize: "1.2em",
+                  fontFamily: "Poppins",
+                }}
+              >
+                {props.price.inr} ₹ | {props.price.usd} $
+              </span>
+            </div>
           </div>
 
           <button
             style={{
               // backgroundColor: "#1976d2",
+              borderRadius: "0 0 1em  1em",
               border: "none",
-              color: "white",
               width: "100%",
-              padding: "0.9em",
-              borderRadius: "0 0 0.5em  0.5em",
-              cursor: "pointer",
-              fontSize: "1.25em",
-              // buying button
-              fontFamily: "Poppins",
-              letterSpacing: "0.05em",
+              marginTop: "0.5em",
               fontWeight: 500,
-              backgroundColor: "#4361ee",
-              marginTop: "1em",
+              background: `url(${props.imgsrc})`,
             }}
             onClick={() => {
               setDialog(true);
             }}
             // className="about-view packages-btn"
           >
-            Book Now
+            <div
+              style={{
+                borderRadius: "0 0 1em  1em",
+
+                border: "none",
+                color: "white",
+                width: "100%",
+                padding: "0.9em",
+                cursor: "pointer",
+                fontSize: "1.25em",
+                // buying button
+                fontFamily: "Poppins",
+                letterSpacing: "0.05em",
+                fontWeight: 500,
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+
+                // background: `url(${props.imgsrc})`,
+              }}
+            >
+              Book Now
+            </div>
           </button>
 
           {/* <div className="packages-para">
