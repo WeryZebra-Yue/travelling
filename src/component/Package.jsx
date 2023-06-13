@@ -18,7 +18,7 @@ function Package(props) {
     >
       <div>
         <img
-          src={props.imgsrc ? props.imgSrc : image}
+          src={props.imgsrc ? props.imgsrc : image}
           alt="package-place"
           width={350}
           height={250}
