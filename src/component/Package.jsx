@@ -11,9 +11,10 @@ function Package(props) {
         // justifyContent: "space-between",
         alignItems: "center",
         color: "#f9f7f3",
-        marginBottom: "1em",
+        // marginBottom: "1em",
         // padding: "1em",
         borderRadius: "1em",
+        margin: "1em",
       }}
     >
       <div>

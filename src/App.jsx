@@ -601,7 +601,12 @@ function App() {
           </div>
         </section>
         <section id="pack" className="packages">
-          <div className="container">
+          <div
+            className=""
+            style={{
+              margin: "1em",
+            }}
+          >
             <div
               className="gallary-header text-center"
               style={{
@@ -612,14 +617,20 @@ function App() {
               <p>There are many places to visit in the world, but we have</p>
             </div>
             <div className="packages-content">
-              <div className="row">
+              <div
+                className="row"
+                style={{
+                  width: "100%",
+                }}
+              >
                 <div
                   className=""
                   style={{
                     display: "flex",
                     flexWrap: "wrap",
-                    justifyContent: "space-between",
-                    alignItems: "center",
+                    width: "100%",
+                    justifyContent: "center",
+                    alignItems: "flex-start",
                   }}
                 >
                   {packages &&
