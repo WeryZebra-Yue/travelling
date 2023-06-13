@@ -113,7 +113,12 @@ function App() {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <div className="single-travel-boxes">
+                <div
+                  className="single-travel-boxes"
+                  style={{
+                    borderRadius: "1em",
+                  }}
+                >
                   <div id="desc-tabs" className="desc-tabs">
                     <ul className="nav nav-tabs" role="tablist">
                       <li role="presentation" className="active">
@@ -122,25 +127,47 @@ function App() {
                           aria-controls="tours"
                           role="tab"
                           data-toggle="tab"
+                          style={{
+                            borderRadius: "0.5em 0 0 0 ",
+                            margin: "0",
+                          }}
                         >
                           <i className="fa fa-tree"></i>
                           tours
                         </a>
                       </li>
 
-                      <li role="presentation">
+                      <li
+                        role="presentation"
+                        style={{
+                          bordeRadius: "0 0 0 0! important",
+                          margin: "0",
+                          backgroundColor: "#4361ee",
+                        }}
+                      >
                         <a
                           href="#hotels"
                           aria-controls="hotels"
                           role="tab"
                           data-toggle="tab"
+                          style={{
+                            bordeRadius: "0 0 0 0! important",
+                            margin: "0",
+                          }}
                         >
                           <i className="fa fa-building"></i>
                           hotels
                         </a>
                       </li>
 
-                      <li role="presentation">
+                      <li
+                        role="presentation"
+                        style={{
+                          bordeRadius: "0 0 0 0! important",
+                          margin: "0",
+                          backgroundColor: "#4361ee",
+                        }}
+                      >
                         <a
                           href="#flights"
                           aria-controls="flights"
@@ -264,23 +291,11 @@ function App() {
                             <div className="col-sm-5">
                               <div className="travel-budget">
                                 <div className="row">
-                                  <div className="col-md-3 col-sm-4">
-                                    <h3>budget :</h3>
-                                  </div>
                                   <div className="co-md-9 col-sm-8">
                                     <div className="travel-filter">
                                       <div className="info_widget">
                                         <div className="price_filter">
                                           <div id="slider-range"></div>
-
-                                          <div className="price_slider_amount">
-                                            <input
-                                              type="text"
-                                              id="amount"
-                                              name="price"
-                                              placeholder="Add Your Price"
-                                            />
-                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -290,8 +305,15 @@ function App() {
                             </div>
                             <div className="clo-sm-7">
                               <div className="about-btn travel-mrt-0 pull-right">
-                                <button className="about-view travel-btn">
-                                  search
+                                <button
+                                  className="about-view travel-btn"
+                                  style={{
+                                    backgroundColor: "#4361ee",
+                                    fontWeight: 500,
+                                    fontSize: "1.1em",
+                                  }}
+                                >
+                                  SEARCH
                                 </button>
                               </div>
                             </div>
@@ -580,12 +602,14 @@ function App() {
         </section>
         <section id="pack" className="packages">
           <div className="container">
-            <div className="gallary-header text-center">
+            <div
+              className="gallary-header text-center"
+              style={{
+                marginTop: "0!important",
+              }}
+            >
               <h2>special packages</h2>
-              <p>
-                Duis aute irure dolor in velit esse cillum dolore eu fugiat
-                nulla.
-              </p>
+              <p>There are many places to visit in the world, but we have</p>
             </div>
             <div className="packages-content">
               <div className="row">
