@@ -673,7 +673,13 @@ function App() {
                 <h2>top destination</h2>
                 <p>Where do you wanna go? How much you wanna explore?</p>
               </div>
-              <div class="gallery-box">
+              <div
+                class="gallery-box"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <div class="gallery-content">
                   <div class="filtr-container">
                     <div class="row">
