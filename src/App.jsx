@@ -13,6 +13,15 @@ import "./assets/css/style.css";
 import "./assets/css/responsive.css";
 
 import imgsrc from "./assets/images/packages/p1.jpg";
+import s1 from "./assets/images/service/s1.jpg";
+import s2 from "./assets/images/service/s2.png";
+import s3 from "./assets/images/service/s3.png";
+import g1 from "./assets/images/gallary/g1.jpg";
+import g2 from "./assets/images/gallary/g2.jpg";
+import g3 from "./assets/images/gallary/g3.jpg";
+import g4 from "./assets/images/gallary/g4.jpg";
+import g5 from "./assets/images/gallary/g5.jpg";
+import g6 from "./assets/images/gallary/g6.jpg";
 // import { packages } from "./component/Example";
 import Package from "./component/Package";
 import Payment from "./component/Payment";
@@ -33,7 +42,12 @@ function App() {
       {" "}
       <main>
         <header className="top-area">
-          <div className="header-area">
+          <div
+            className="header-area"
+            style={{
+              position: "fixed!important",
+            }}
+          >
             <div className="container">
               <div className="row">
                 <div className="col-sm-2">
@@ -109,7 +123,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="travel-box">
+        {/* <section className="travel-box">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
@@ -599,6 +613,153 @@ function App() {
               </div>
             </div>
           </div>
+        </section> */}
+        <section id="service" class="service">
+          <div class="container">
+            <div class="service-counter text-center">
+              <div class="col-md-4 col-sm-4">
+                <div class="single-service-box">
+                  <div class="service-img">
+                    <img src={s1} alt="service-icon" />
+                  </div>
+                  <div class="service-content">
+                    <h2>
+                      <a href="#"> Choose amazing tour packages </a>
+                    </h2>
+                    <p>
+                      Must use our tour Planner for breathtaking tour packages!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4">
+                <div class="single-service-box">
+                  <div class="service-img">
+                    <img src={s2} alt="service-icon" />
+                  </div>
+                  <div class="service-content">
+                    <h2>
+                      <a href="#"> book top class hotel </a>
+                    </h2>
+                    <p>
+                      This amazing site helps you book the best hotels all
+                      around the world!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-4">
+                <div class="single-service-box">
+                  <div class="statistics-img">
+                    <img src={s3} alt="service-icon" />
+                  </div>
+                  <div class="service-content">
+                    <h2>
+                      <a href="#"> online flight booking </a>
+                    </h2>
+                    <p>Book your flight instantly using TourNest!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="gallery" class="gallery">
+          <div class="container">
+            <div class="gallery-details">
+              <div class="gallary-header text-center">
+                <h2>top destination</h2>
+                <p>Where do you wanna go? How much you wanna explore?</p>
+              </div>
+              <div class="gallery-box">
+                <div class="gallery-content">
+                  <div class="filtr-container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="filtr-item">
+                          <img src={g1} alt="portfolio image" />
+                          <div class="item-title">
+                            <a href="#"> china </a>
+                            <p>
+                              <span>20 tours</span>
+                              <span>15 places</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="filtr-item">
+                          <img src={g2} alt="portfolio image" />
+                          <div class="item-title">
+                            <a href="#"> venuzuala </a>
+                            <p>
+                              <span>12 tours</span>
+                              <span>9 places</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="filtr-item">
+                          <img src={g3} alt="portfolio image" />
+                          <div class="item-title">
+                            <a href="#"> brazil </a>
+                            <p>
+                              <span>25 tours</span>
+                              <span>10 places</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="filtr-item">
+                          <img src={g4} alt="portfolio image" />
+                          <div class="item-title">
+                            <a href="#"> australia </a>
+                            <p>
+                              <span>18 tours</span>
+                              <span>9 places</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="filtr-item">
+                          <img src={g5} alt="portfolio image" />
+                          <div class="item-title">
+                            <a href="#"> netharlands </a>
+                            <p>
+                              <span>14 tours</span>
+                              <span>12 places</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-8">
+                        <div class="filtr-item">
+                          <img src={g6} alt="portfolio image" />
+                          <div class="item-title">
+                            <a href="#"> turkey </a>
+                            <p>
+                              <span>14 tours</span>
+                              <span>6 places</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section id="pack" className="packages">
           <div
@@ -613,7 +774,7 @@ function App() {
                 marginTop: "0!important",
               }}
             >
-              <h2>special packages</h2>
+              <h2>Special packages</h2>
               <p>There are many places to visit in the world, but we have</p>
             </div>
             <div className="packages-content">
@@ -648,6 +809,123 @@ function App() {
             </div>
           </div>
         </section>
+        <footer class="footer-copyright">
+          <div class="container">
+            <div class="footer-content">
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="single-footer-item">
+                    <div class="footer-logo">
+                      <a href="index.html">
+                        {" "}
+                        tour<span>Nest</span>{" "}
+                      </a>
+                      <p>best travel agency</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="single-footer-item">
+                    <h2>link</h2>
+                    <div class="single-footer-txt">
+                      <p>
+                        <a href="#">home</a>
+                      </p>
+                      <p>
+                        <a href="#">destination</a>
+                      </p>
+                      <p>
+                        <a href="#">spacial packages</a>
+                      </p>
+                      <p>
+                        <a href="#">special offers</a>
+                      </p>
+                      <p>
+                        <a href="#">blog</a>
+                      </p>
+                      <p>
+                        <a href="#">contacts</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="single-footer-item">
+                    <h2>popular destination</h2>
+                    <div class="single-footer-txt">
+                      <p>
+                        <a href="#">china</a>
+                      </p>
+                      <p>
+                        <a href="#">venezuela</a>
+                      </p>
+                      <p>
+                        <a href="#">brazil</a>
+                      </p>
+                      <p>
+                        <a href="#">australia</a>
+                      </p>
+                      <p>
+                        <a href="#">london</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="single-footer-item text-center">
+                    <h2 class="text-left">contacts</h2>
+                    <div class="single-footer-txt text-left">
+                      <p>+1 (300) 1234 6543</p>
+                      <p class="foot-email">
+                        <a href="#">info@tnest.com</a>
+                      </p>
+                      <p>North Warnner Park 336/A</p>
+                      <p>Newyork, USA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="foot-icons">
+              <ul class="footer-social-links list-inline list-unstyled">
+                <li>
+                  <a href="#" target="_blank" class="foot-icon-bg-1">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" class="foot-icon-bg-2">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" class="foot-icon-bg-3">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+              <p>
+                &copy; 2017 <a href="https://www.themesine.com">ThemeSINE</a>.
+                All Right Reserved
+              </p>
+            </div>
+            <div id="scroll-Top">
+              <i
+                class="fa fa-angle-double-up return-to-top"
+                id="scroll-top"
+                data-toggle="tooltip"
+                data-placement="top"
+                title=""
+                data-original-title="Back to Top"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );
