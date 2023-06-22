@@ -9,3 +9,25 @@
   display: flex;
   width: 100%;
 }
+.MuiSelect-select {
+  /*  */
+  font-size: 15px !important;
+  line-height: 20px !important;
+  border: none !important;
+  outline: none !important;
+  font-family: "Lato", sans-serif;
+}
+
+.MuiInputBase-root {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  border: none !important;
+  outline: none !important;
+}
+.MuiInputBase-input {
+  border: none !important;
+  outline: none !important;
+  font-family: "Lato", sans-serif;
+}

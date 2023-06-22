@@ -78,7 +78,7 @@ function Package(props) {
                   fontFamily: "Poppins",
                 }}
               >
-                {props.price.inr} ₹ | {props.price.usd} $
+                x ₹ | x $
               </span>
             </div>
           </div>

@@ -635,7 +635,13 @@ function App() {
                 >
                   {packages &&
                     packages.map((item) => {
-                      return <Package key={item.id} {...item} />;
+                      return (
+                        <Package
+                          key={item.id}
+                          imgsrc={item.imgsrc}
+                          title={item.title}
+                        />
+                      );
                     })}
                 </div>
               </div>

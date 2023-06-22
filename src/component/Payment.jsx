@@ -33,7 +33,7 @@ function Payment(props) {
               purchase_units: [
                 {
                   amount: {
-                    value: props.price.usd,
+                    value: props.price,
                     currency_code: "USD",
                   },
                 },

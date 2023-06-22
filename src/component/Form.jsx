@@ -8,12 +8,15 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { useEffect, useState } from "react";
 import PaymentIcon from "@mui/icons-material/Payment";
 import PaymentForm from "./PaymentForm";
+import { MenuItem, Select } from "@mui/material";
 export default function FormDialog(props) {
   const [open, setOpen] = useState(false);
   const [payment, setPayment] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(null);
+  const [price, setPrice] = useState(null);
+  const [currency, setCurrency] = useState("₹");
   useEffect(() => {
     setOpen(props.open);
   }, [props.open]);
@@ -36,6 +39,8 @@ export default function FormDialog(props) {
         name={name}
         email={email}
         phone={phone}
+        price={price}
+        currency={currency}
         close={() => {
           setPayment(false);
           handleClose();
@@ -50,9 +55,7 @@ export default function FormDialog(props) {
             }}
           >
             <p>Trip: {props.title}</p>
-            <p>
-              Price: {props.price.inr} ₹ | {props.price.usd} $
-            </p>
+            <p>Price: x ₹ | x $</p>
           </div>
         </DialogTitle>
         <form>
@@ -125,6 +128,76 @@ export default function FormDialog(props) {
               }}
               required
             />
+            <div
+              style={{
+                display: "flex",
+                // justi: center;
+                // align-items: center;
+                justifyContent: "space-between",
+                width: "100%",
+                marginTop: "1em",
+                alignItems: "center",
+              }}
+            >
+              <Select
+                style={{
+                  display: "flex",
+                  // padding: "0em!important",
+                  fontSize: "15px!important",
+                  border: "none!important",
+                  outline: "none!important",
+                  padding: "0em 0em 0em 0em!important",
+                  marginRight: "20px",
+                }}
+                value={currency}
+                onChange={(e) => {
+                  setCurrency(e.target.value);
+                }}
+              >
+                <MenuItem
+                  style={{
+                    fontSize: "15px",
+                  }}
+                  value={"₹"}
+                >
+                  {" "}
+                  ₹ INR{" "}
+                </MenuItem>
+                <MenuItem
+                  style={{
+                    fontSize: "15px",
+                    border: "none",
+                    outline: "none",
+                  }}
+                  value={"$"}
+                >
+                  {" "}
+                  $ USD{" "}
+                </MenuItem>
+              </Select>
+              <TextField
+                autoFocus
+                margin="dense"
+                InputLabelProps={{
+                  style: {
+                    fontSize: "15px",
+                  },
+                }}
+                value={price}
+                onChange={(e) => {
+                  setPrice(e.target.value);
+                }}
+                id="price"
+                label="Price"
+                type="number"
+                fullWidth
+                variant="standard"
+                style={{
+                  fontSize: "2em",
+                }}
+                required
+              />
+            </div>
           </DialogContent>
           <DialogActions>
             <Button

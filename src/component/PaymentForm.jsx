@@ -37,7 +37,7 @@ export default function PaymentForm(props) {
           >
             <p>Trip: {props.title}</p>
             <p>
-              Price: {props.price.inr} ₹ | {props.price.usd} $
+              Price: {props.price} {props.currency}
             </p>
           </div>
           <h5
@@ -58,66 +58,69 @@ export default function PaymentForm(props) {
               width: "100%",
             }}
           >
-            <Payment {...props} />
-            <Button
-              style={{
-                marginTop: "0.5em",
-                fontSize: "1.1em",
-                textTransform: "capitalize",
-                fontFamily: "Lato",
-                width: "100%",
-                padding: "0.5em",
-              }}
-              variant="outlined"
-              onClick={() => {
-                const options = {
-                  key: "rzp_test_2mAYnRncGDEawP",
-                  amount: props.price.inr * 100,
-                  name: "Acme Corp",
-                  description: "Test Transaction",
-                  image: "https://example.com/your_logo",
-                  handler: async function (response) {
-                    const booking = {
-                      trip: props.title,
-                      price: props.price,
-                      payment: "Razorpay",
-                      status: "Booked",
-                      time: new Date().toLocaleString(),
+            {props.currency !== "₹" ? (
+              <Payment {...props} />
+            ) : (
+              <Button
+                style={{
+                  marginTop: "0.5em",
+                  fontSize: "1.1em",
+                  textTransform: "capitalize",
+                  fontFamily: "Lato",
+                  width: "100%",
+                  padding: "0.5em",
+                }}
+                variant="outlined"
+                onClick={() => {
+                  const options = {
+                    key: "rzp_test_2mAYnRncGDEawP",
+                    amount: props.price * 100,
+                    name: "Acme Corp",
+                    description: "Test Transaction",
+                    image: "https://example.com/your_logo",
+                    handler: async function (response) {
+                      const booking = {
+                        trip: props.title,
+                        price: props.price,
+                        payment: "Razorpay",
+                        status: "Booked",
+                        time: new Date().toLocaleString(),
+                        name: props.name,
+                        email: props.email,
+                        phone: props.phone,
+                        paymentId: response.razorpay_payment_id,
+                      };
+                      await createBooking(booking);
+                      window.location.reload();
+                    },
+
+                    prefill: {
                       name: props.name,
                       email: props.email,
-                      phone: props.phone,
-                      paymentId: response.razorpay_payment_id,
-                    };
-                    await createBooking(booking);
-                    window.location.reload();
-                  },
+                      contact: props.phone,
+                    },
 
-                  prefill: {
-                    name: props.name,
-                    email: props.email,
-                    contact: props.phone,
-                  },
-
-                  notes: {
-                    address: "Razorpay Corporate Office",
-                  },
-                  theme: {
-                    color: "rgb(25, 118, 210)",
-                  },
-                };
-                const rzp = new window.Razorpay(options);
-                rzp.open();
-                rzp.on("payment.approved", function (response) {
-                  console.log(response);
-                  props.close();
-                });
-              }}
-            >
-              <img
-                src="https://pages.awscloud.com/rs/112-TZM-766/images/1_RAZORPAY_LOGO.png"
-                width={80}
-              />
-            </Button>
+                    notes: {
+                      address: "Razorpay Corporate Office",
+                    },
+                    theme: {
+                      color: "rgb(25, 118, 210)",
+                    },
+                  };
+                  const rzp = new window.Razorpay(options);
+                  rzp.open();
+                  rzp.on("payment.approved", function (response) {
+                    console.log(response);
+                    props.close();
+                  });
+                }}
+              >
+                <img
+                  src="https://pages.awscloud.com/rs/112-TZM-766/images/1_RAZORPAY_LOGO.png"
+                  width={80}
+                />
+              </Button>
+            )}
           </div>
         </DialogTitle>
         <DialogContent></DialogContent>
