@@ -684,10 +684,18 @@ function App() {
                   <div class="filtr-container">
                     <div class="row">
                       <div class="col-md-6">
-                        <div class="filtr-item">
+                        <div
+                          class="filtr-item"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            window.location.href = "#packa";
+                          }}
+                        >
                           <img src={g1} alt="portfolio image" />
                           <div class="item-title">
-                            <a href="#"> china </a>
+                            <a href="#pack"> china </a>
                             <p>
                               <span>20 tours</span>
                               <span>15 places</span>
@@ -697,10 +705,18 @@ function App() {
                       </div>
 
                       <div class="col-md-6">
-                        <div class="filtr-item">
+                        <div
+                          class="filtr-item"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            window.location.href = "#packa";
+                          }}
+                        >
                           <img src={g2} alt="portfolio image" />
                           <div class="item-title">
-                            <a href="#"> venuzuala </a>
+                            <a href="#pack"> venuzuala </a>
                             <p>
                               <span>12 tours</span>
                               <span>9 places</span>
@@ -710,10 +726,18 @@ function App() {
                       </div>
 
                       <div class="col-md-4">
-                        <div class="filtr-item">
+                        <div
+                          class="filtr-item"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            window.location.href = "#packa";
+                          }}
+                        >
                           <img src={g3} alt="portfolio image" />
                           <div class="item-title">
-                            <a href="#"> brazil </a>
+                            <a href="#pack"> brazil </a>
                             <p>
                               <span>25 tours</span>
                               <span>10 places</span>
@@ -723,10 +747,18 @@ function App() {
                       </div>
 
                       <div class="col-md-4">
-                        <div class="filtr-item">
+                        <div
+                          class="filtr-item"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            window.location.href = "#packa";
+                          }}
+                        >
                           <img src={g4} alt="portfolio image" />
                           <div class="item-title">
-                            <a href="#"> australia </a>
+                            <a href="#pack"> australia </a>
                             <p>
                               <span>18 tours</span>
                               <span>9 places</span>
@@ -736,10 +768,18 @@ function App() {
                       </div>
 
                       <div class="col-md-4">
-                        <div class="filtr-item">
+                        <div
+                          class="filtr-item"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            window.location.href = "#packa";
+                          }}
+                        >
                           <img src={g5} alt="portfolio image" />
                           <div class="item-title">
-                            <a href="#"> netharlands </a>
+                            <a href="#pack"> netharlands </a>
                             <p>
                               <span>14 tours</span>
                               <span>12 places</span>
@@ -749,10 +789,18 @@ function App() {
                       </div>
 
                       <div class="col-md-8">
-                        <div class="filtr-item">
+                        <div
+                          class="filtr-item"
+                          style={{
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            window.location.href = "#packa";
+                          }}
+                        >
                           <img src={g6} alt="portfolio image" />
                           <div class="item-title">
-                            <a href="#"> turkey </a>
+                            <a href="#pack"> turkey </a>
                             <p>
                               <span>14 tours</span>
                               <span>6 places</span>
@@ -781,7 +829,9 @@ function App() {
               }}
             >
               <h2>Special packages</h2>
-              <p>There are many places to visit in the world, but we have</p>
+              <p id="packa">
+                There are many places to visit in the world, but we have
+              </p>
             </div>
             <div className="packages-content">
               <div
